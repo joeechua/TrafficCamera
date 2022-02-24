@@ -1,2 +1,3 @@
 # TrafficCamera
-skeleton code for future projects
+Object Detection with OpenCV, PyTorch, and YOLO5S
+
