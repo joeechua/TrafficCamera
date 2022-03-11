@@ -36,7 +36,9 @@ class ObjectDetection:
         Creates a new video streaming object to extract video frame by frame to make prediction on.
         :return: opencv2 video capture object, with lowest quality frame available for video.
         """
-        return cv2.VideoCapture(self._URL)
+        #return cv2.VideoCapture(self._URL)
+        return cv2.VideoCapture(0)
+
 
     def load_model(self):
         """
@@ -127,7 +129,7 @@ class ObjectDetection:
             frame_num += 1
             assert ret
             tempo = float(1/self.DELAY)
-            sleep(tempo) 
+            sleep(0.2) 
 
             if self.car_counter is None:
                 self.car_counter = VehicleCounter(frame.shape[:2], self.LINE_POS, player.get(cv2.CAP_PROP_FPS))
