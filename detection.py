@@ -134,6 +134,7 @@ class ObjectDetection:
             if self.car_counter is None:
                 self.car_counter = VehicleCounter(frame.shape[:2], self.LINE_POS, player.get(cv2.CAP_PROP_FPS))
 
+            #TODO add a resize to fix vid size at 640:480
             results = self.score_frame(frame)
             frame = self.plot_boxes(results, frame, frame_num)
             end_time = time()
